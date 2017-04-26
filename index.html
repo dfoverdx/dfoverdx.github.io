@@ -6,7 +6,7 @@
     <body>
         <div class="jumbotron">
             <div class="container">
-                <h1>dfoverdx.github.io</h1>
+                <h1 id="jumbotronTitle"></h1>
             </div>
         </div>
         <div class="container">
@@ -24,5 +24,9 @@
                 </div>
             </div>
         </div>
+        <script>
+            let h1 = document.getElementById('jumbotronTitle');
+            h1.innerText = window.location.host;
+        </script>
     </body>
 </html>
