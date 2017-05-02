@@ -1,7 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>
+            .navbar-text .list-inline {
+                display: block;
+            }
+
+            .navbar-text .list-inline li {
+                display: inline-block;
+                padding: 0;
+            }
+
+            .navbar-text .list-inline li:not(:last-of-type):after {
+                content: '|';
+                margin: 0 5px;
+            }
+        </style>
     </head>
     <body>
         <div class="jumbotron">
@@ -9,39 +26,52 @@
                 <h1 id="jumbotronTitle"></h1>
             </div>
         </div>
-        <div class="container">
-            <div class="col-xs-12 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="panel-title">
-                            Dialectical Behavior Therapy (DBT) Projects
+        <div class="container" style="margin-bottom: 64px">
+            <div class="row">
+                <div id="panels" class="col-xs-12 col-lg-12">
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Dialectical Behavior Therapy (DBT) Tools
+                                </div>
+                            </div>
+                            <div class="list-group">
+                                <a href="https://understandingdepressionandanxiety.wordpress.com/" class="list-group-item">Understanding Depression and Anxiety Blog</a>
+                                <a href="core-values-quiz" class="list-group-item">Core Values Quiz</a>
+                                <a href="dbt-dime-game" class="list-group-item"><i>Dime Game</i>: How to decide how assertively to make or decline a request</a>
+                                <span class="list-group-item disabled" style="cursor: default"><i>Coming soon</i>: Panic Pulse - Anxiety Tracking mobile app on iOS and Android</span>
+                                <span class="list-group-item disabled" style="cursor: default">More DBT tools to come...</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="list-group">
-                        <a href="core-values-quiz" class="list-group-item">Core Values Quiz</a>
-                        <a href="dbt-dime-game" class="list-group-item">DBT <i>Dime Game</i> - How to decide how assertively to make or decline a request</a>
-                        <span class="list-group-item disabled" style="cursor: default">More projects to come...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="panel-title">
-                            Papers / Research
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Papers / Research
+                                </div>
+                            </div>
+                            <div class="list-group">
+                                <a href="papers/A-Study-of-the-Teaching-of-Critical-Thinking.pdf" class="list-group-item">A Study of the Teaching of Critical Thinking - Masters Thesis (pdf)</a>
+                                <a href="https://www.facebook.com/notes/jordan-hitch/why-do-we-hit-more-raindrops-when-driving-fast-than-when-driving-slow/10153833981967465/" class="list-group-item">Why Do We Hit More Raindrops When Driving Fast Than When Driving Slow?</a>
+                                <span class="list-group-item disabled" style="cursor: default">More papers to come...</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="list-group">
-                        <a href="papers/A-Study-of-the-Teaching-of-Critical-Thinking.pdf" class="list-group-item">A Study of the Teaching of Critical Thinking - Masters Thesis (pdf)</a>
-                        <a href="https://www.facebook.com/notes/jordan-hitch/why-do-we-hit-more-raindrops-when-driving-fast-than-when-driving-slow/10153833981967465/" class="list-group-item">Why Do We Hit More Raindrops When Driving Fast Than When Driving Slow?</a>
-                        <span class="list-group-item disabled" style="cursor: default">More papers to come...</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="navbar navbar-fixed-bottom navbar-default">
+            <div class="container">
+                <div class="navbar-right navbar-text" style="margin-right: 0">
+                    <a href='/'>Jordan Hitch</a> © 2017
+                </div>
+            </div>
+        </div>
         <script>
-            let h1 = document.getElementById('jumbotronTitle');
-            h1.innerText = window.location.host;
+            let h1 = $('#jumbotronTitle');
+            h1.text(window.location.host || 'dfdx.us');
         </script>
     </body>
 </html>
