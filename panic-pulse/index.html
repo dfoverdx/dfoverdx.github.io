@@ -17,7 +17,27 @@
                 height: 150px;
                 margin-right: 20px;
             }
-            .app-links a {
+            .jumbotron h1 {
+                position: relative;
+                height: 150px;
+            }
+            .jumbotron .app-links {
+                text-align: right;
+                position: relative;
+                height: 150px;
+                vertical-align: bottom;
+            }
+            .jumbotron .app-links > * {
+                position: relative;
+                top: 55%;
+                transform: translateY(-100%);
+                max-height: 40px;
+                overflow-y: visible;
+            }
+            .jumbotron .app-links .play-app-link img {
+                top: -44px;
+            }
+            #body .app-links a {
                 margin-bottom: 4px;
             }
             .play-app-link img {
@@ -34,12 +54,16 @@
                 <h1>
                     <img class="icon" src="./img/panic-pulse-icon.png" />
                     Panic Pulse
+                    <div class="app-links hidden-xs hidden-sm pull-right">
+                        <a href="#" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
+                        <a href='#' class="play-app-link"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+                    </div>
                 </h1>
             </div>
         </div>
-        <div class="container" style="margin-bottom: 64px">
+        <div class="container" id="body" style="margin-bottom: 64px">
             <div class="row">
-                <div class="col-xs-12 col-md-8 col-lg-8">
+                <div class="col-xs-12 col-md-8 col-lg-8 hidden-xs hidden-sm" id="description-well">
                     <div class="well">
                         <p>
                             Panic Pulse makes it easy to track subjective anxiety levels throughout a stressful activity.  I found
@@ -94,9 +118,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="app-links col-xs-12 col-sm-6 col-md-4 col-lg-4" style="text-align: right;">
+                <div class="app-links col-xs-12 col-sm-6 visible-xs visible-sm" style="text-align: right;">
                     <a href="#" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
                     <a href='#' class="play-app-link"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+                </div>
+                <div id="description-well-bottom-container">
                 </div>
             </div>
         </div>
@@ -107,5 +133,12 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            $(() => {
+                var descWell = $('#description-well').clone();
+                descWell.removeClass('hidden-xs hidden-sm').addClass('hidden-md hidden-lg').attr('id', 'description-well-bottom');
+                $('#description-well-bottom-container').append(descWell);
+            });
+        </script>
     </body>
 </html>
