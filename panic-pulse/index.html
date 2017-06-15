@@ -32,7 +32,6 @@
                 position: relative;
                 top: 55%;
                 transform: translateY(-100%);
-                max-height: 40px;
                 overflow-y: visible;
             }
             .jumbotron .app-links .play-app-link img {
@@ -59,8 +58,10 @@
                     <img class="icon" src="./img/panic-pulse-icon.png" />
                     <div style="display: inline-block;">Panic Pulse</div>
                     <div class="app-links hidden-xs hidden-sm pull-right">
-                        <a href="https://itunes.apple.com/us/app/panic-pulse/id1244205772?ls=1&mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
-                        <!-- <a href='#' class="play-app-link"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a> -->
+                        <div id="app-links">
+                            <a href="https://itunes.apple.com/us/app/panic-pulse/id1244205772?ls=1&mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:160px;height:47px;background-size:cover;"></a>
+                            <!-- <a href='#' class="play-app-link"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a> -->
+                        </div>
                     </div>
                 </h1>
             </div>
@@ -123,8 +124,6 @@
                     </div>
                 </div>
                 <div class="app-links col-xs-12 col-sm-6 visible-xs visible-sm" style="text-align: right;">
-                    <a href="https://itunes.apple.com/us/app/panic-pulse/id1244205772?ls=1&mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
-                    <!-- <a href='#' class="play-app-link"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a> -->
                 </div>
                 <div id="description-well-bottom-container">
                 </div>
@@ -142,6 +141,9 @@
                 var descWell = $('#description-well').clone();
                 descWell.removeClass('hidden-xs hidden-sm').addClass('hidden-md hidden-lg').attr('id', 'description-well-bottom');
                 $('#description-well-bottom-container').append(descWell);
+
+                var appLinks = $('#app-links').clone();
+                $('#body .app-links').append(appLinks);
             });
         </script>
     </body>
