@@ -17,9 +17,10 @@
                 height: 150px;
                 margin-right: 20px;
             }
-            .jumbotron h1 {
-                position: relative;
-                height: 150px;
+            @media (max-width: 767px) {
+                .icon {
+                    height: 75px;
+                }
             }
             .jumbotron .app-links {
                 text-align: right;
@@ -37,6 +38,9 @@
             .jumbotron .app-links .play-app-link img {
                 top: -44px;
             }
+            #body .app-links {
+                margin-bottom: 10px;
+            }
             #body .app-links a {
                 margin-bottom: 4px;
             }
@@ -53,7 +57,7 @@
             <div class="container">
                 <h1>
                     <img class="icon" src="./img/panic-pulse-icon.png" />
-                    Panic Pulse
+                    <div style="display: inline-block;">Panic Pulse</div>
                     <div class="app-links hidden-xs hidden-sm pull-right">
                         <a href="https://itunes.apple.com/us/app/panic-pulse/id1244205772?ls=1&mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
                         <!-- <a href='#' class="play-app-link"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a> -->
