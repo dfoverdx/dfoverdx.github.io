@@ -17,11 +17,6 @@
                 height: 150px;
                 margin-right: 20px;
             }
-            @media (max-width: 767px) {
-                .icon {
-                    height: 75px;
-                }
-            }
             .jumbotron .app-links {
                 text-align: right;
                 position: relative;
@@ -37,17 +32,42 @@
             .jumbotron .app-links .play-app-link img {
                 top: -8px;
             }
+            #body {
+                margin-bottom: 64px;
+            }
             #body .app-links {
                 margin-bottom: 10px;
+                text-align: right;
             }
             #body .app-links a {
                 margin-bottom: 4px;
+            }
+            #body .app-links a:first-child {
+                margin-bottom: 16px;
             }
             .play-app-link img {
                 width: 180px;
                 margin-right: -10px;
                 position: relative;
-                top: -25px;
+                top: -37px;
+            }
+            @media (max-width: 767px) {
+                #body {
+                    margin-bottom: 90px;
+                }
+                .icon {
+                    height: 75px;
+                }
+                #body .app-links {
+                    margin-bottom: -30px;
+                    text-align: center;
+                }
+            }
+            @media (max-width: 330px) {
+                .play-app-link img {
+                    top: -20px;
+                    margin-bottom: -20px;
+                }
             }
         </style>
     </head>
@@ -66,7 +86,7 @@
                 </h1>
             </div>
         </div>
-        <div class="container" id="body" style="margin-bottom: 64px">
+        <div class="container" id="body">
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-lg-8 hidden-xs hidden-sm" id="description-well">
                     <div class="well">
@@ -123,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="app-links col-xs-12 col-sm-6 visible-xs visible-sm" style="text-align: right;">
+                <div class="app-links col-xs-12 col-sm-6 visible-xs visible-sm">
                 </div>
                 <div id="description-well-bottom-container">
                 </div>
