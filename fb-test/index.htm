@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>
+            .well a {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="main">
+            </div>
+        </div>
+
+        <script>
+            let $main;
+
+            function parsePostId(id) {
+                let idx = id.indexOf('_');
+                return id.substring(idx);
+            }
+
+            function appendPost(postData) {
+                let $postDiv = $('<div>'),
+                    $postLink = $('<a>');
+
+                $postDiv.addClass('well');
+                $postLink.attr('href', 'https://facebook.com/dfoverdx/posts/' + parsePostId(postData.id));
+                $postLink.append(postData['created_time']);
+
+                $postDiv.append($postLink).append(postData.message);
+                $main.append($postDiv);
+            }
+
+            function run() {
+                $main = $('#main');
+                FB.login(() => {
+                    FB.api('/me/posts', 'get', { limit: 500 }, (response) => {
+                        $main.text(response);
+                    });
+                });
+            }
+
+            $(() => {
+                $.ajaxSetup({ cache: true });
+                $.getScript('https://connect.facebook.net/en_US/sdk.js', function() {
+                    FB.init({
+                        appId: '722401361110198',
+                        version: 'v2.9'
+                    });
+                    $('#loginbutton,#feedbutton').removeAttr('disabled');
+                    FB.getLoginStatus(run);
+                });
+            });
+        </script>
+    </body>
+</html>
