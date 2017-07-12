@@ -8,6 +8,10 @@
             .well a {
                 display: block;
             }
+
+            .well {
+                white-space: pre-wrap;
+            }
         </style>
     </head>
     <body>
@@ -17,11 +21,15 @@
         </div>
 
         <script>
-            let $main;
+            const lengthLimit = 1500,
+                callsLimit = 20;
+
+            let $main,
+                numCalls = 0;
 
             function parsePostId(id) {
                 let idx = id.indexOf('_');
-                return id.substring(idx);
+                return id.substring(idx + 1);
             }
 
             function appendPost(postData) {
@@ -36,13 +44,34 @@
                 $main.append($postDiv);
             }
 
-            function run() {
-                $main = $('#main');
-                FB.login(() => {
-                    FB.api('/me/posts', 'get', { limit: 500 }, (response) => {
-                        $main.text(response);
+            function getPosts(args, res) {
+                FB.api('/me/posts', 'get', args, (response) => {
+                    res(response);
+                });
+            }
+
+            function addThen(promise, args) {
+                let p = promise.then(() => {
+                    return new Promise(res => getPosts(args, res)).then((response) => {
+                        response.data.filter(d => d.message && d.message.length > lengthLimit).forEach(appendPost);
+
+                        numCalls++;
+                        if (response.paging.next && numCalls < callsLimit) {
+                            let until = /until=([^&]+)/g.exec(response.paging.next)[1];
+                            args.until = until;
+                            addThen(p, args);
+                        }
                     });
                 });
+
+                return p;
+            }
+
+            function run() {
+                $main = $('#main');
+
+                let p = Promise.resolve();
+                addThen(p, { limit: 250 });
             }
 
             $(() => {
