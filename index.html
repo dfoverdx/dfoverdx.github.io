@@ -1,159 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <style>
-            .navbar-text .list-inline {
-                display: block;
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js" integrity="sha256-YFADoQJIYFj+isdXssMGUrmsVNbVDfN5m8jPgVN+9m4=" crossorigin="anonymous"></script>
+    <style>
+        @media screen and (max-width: 767px) {
+            body {
+                overflow-x: hidden;
             }
 
-            .navbar-text .list-inline li {
-                display: inline-block;
-                padding: 0;
+            .grid-sizer, .card {
+                width: calc(100% - 25px);
+                margin-right: 25px;
+            }
+        }
+        
+        @media screen and (min-width: 768px) {
+            .grid-sizer, .card {
+                width: calc(50% - 25px);
             }
 
-            .navbar-text .list-inline li:not(:last-of-type):after {
-                content: '|';
-                margin: 0 5px;
+            #cards-container {
+                padding-right: 10px;
             }
+        }
+        
+        @media screen and (max-height: 400px) {
+            #cookieFooterAlert {
+                display: none !important;
+            }
+        }
 
-            .list-group .list-group-item.disabled {
-                cursor: default;
-            }
-            .fa-twitch {
-                color: rgb(75, 54, 124);
-            }
-            .fa-youtube-play {
-                color: rgb(230, 30, 30);
-            }
-            .fa-facebook-official {
-                color: #4267b2;
-            }
-            .fa-wordpress {
-                color: rgb(10, 167, 217);
-            }
-            .smm-icon {
-                min-height: 14px;
-                height: 14px;
-                min-width: 14px;
-                width: 14px;
-                background-image: url("https://supermariomakerbookmark.nintendo.net/assets/favicon/icon180-51497cb9fbbda59f2b0974a7954cceef.png");
-                background-size: 14px 14px;
-                display: inline-block;
-                margin-bottom: -1px;
-            }
-            .panic-pulse-icon {
-                min-height: 17px;
-                height: 17px;
-                min-width: 17px;
-                width: 17px;
-                background-image: url("./panic-pulse/img/panic-pulse-icon-small.png");
-                background-size: 17px 17px;
-                display: inline-block;
-                margin-bottom: -4px;
-                margin-left: -1.5px;
-                border-radius: 17px;
-                margin-top: 1px;
-            }
-        </style>
-        <title>dfdx.us</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta keywords="dbt,mental health,research,Jordan Hitch" />
-        <meta name="author" content="Jordan Hitch" />
-        <meta description="Programming projects, tools, and resources created by Jordan Hitch" />
-        <link rel="canonical" href="http://dfdx.us" />
-    </head>
-    <body>
-        <div class="jumbotron">
-            <div class="container">
-                <h1 id="jumbotronTitle"></h1>
+        .gutter-sizer {
+            width: 30px;
+        }
+        
+        #cards-container {
+            margin-bottom: 64px;
+        }
+        
+        .navbar-text .list-inline {
+            display: block;
+        }
+        
+        .navbar-text .list-inline li {
+            display: inline-block;
+            padding: 0;
+        }
+        
+        .navbar-text .list-inline li:not(:last-of-type):after {
+            content: '|';
+            margin: 0 5px;
+        }
+        
+        .list-group .list-group-item.disabled {
+            cursor: default;
+        }
+        .fa-twitch {
+            color: rgb(75, 54, 124);
+        }
+        .fa-youtube-play {
+            color: rgb(230, 30, 30);
+        }
+        .fa-facebook-official {
+            color: #4267b2;
+        }
+        .fa-wordpress {
+            color: rgb(10, 167, 217);
+        }
+        .smm-icon {
+            min-height: 14px;
+            height: 14px;
+            min-width: 14px;
+            width: 14px;
+            background-image: url("https://supermariomakerbookmark.nintendo.net/assets/favicon/icon180-51497cb9fbbda59f2b0974a7954cceef.png");
+            background-size: 14px 14px;
+            display: inline-block;
+            margin-bottom: -1px;
+        }
+        .panic-pulse-icon {
+            min-height: 17px;
+            height: 17px;
+            min-width: 17px;
+            width: 17px;
+            background-image: url("./panic-pulse/img/panic-pulse-icon-small.png");
+            background-size: 17px 17px;
+            display: inline-block;
+            margin-bottom: -4px;
+            margin-left: -1.5px;
+            border-radius: 17px;
+            margin-top: 1px;
+        }
+    </style>
+    <title>dfdx.us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta keywords="dbt,mental health,research,Jordan Hitch" />
+    <meta name="author" content="Jordan Hitch" />
+    <meta description="Programming projects, tools, and resources created by Jordan Hitch" />
+    <link rel="canonical" href="http://dfdx.us" />
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 id="jumbotronTitle"></h1>
+        </div>
+    </div>
+    <div id="cards-container" class="container">
+        <div class="grid-sizer"></div>
+        <div class="gutter-sizer"></div>
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                Mental Health Tools and Resources
+            </div>
+            <div class="list-group">
+                <a href="https://understandingdepressionandanxiety.wordpress.com/" class="list-group-item">
+                    <i class="fa fa-wordpress" aria-hidden="true"></i>
+                    Understanding Depression and Anxiety Blog
+                </a>
+                <a href="./panic-pulse" class="list-group-item">
+                    <i class="panic-pulse-icon"></i>
+                    Panic Pulse - Anxiety Tracking mobile app on iOS and Android
+                </a>
+                <a href="core-values-quiz" class="list-group-item">Core Values Quiz</a>
+                <a href="dbt-dime-game" class="list-group-item">DBT <i>Dime Game</i>: Determine how assertively to make or decline a request</a>
+                <span class="list-group-item disabled">More DBT tools to come...</span>
             </div>
         </div>
-        <div class="container" style="margin-bottom: 64px">
-            <div class="row">
-                <div id="panels" class="col-xs-12 col-lg-12">
-                    <div class="col-xs-12 col-lg-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    Mental Health Tools and Resources
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <a href="https://understandingdepressionandanxiety.wordpress.com/" class="list-group-item">
-                                    <i class="fa fa-wordpress" aria-hidden="true"></i>
-                                    Understanding Depression and Anxiety Blog
-                                </a>
-                                <a href="./panic-pulse" class="list-group-item">
-                                    <i class="panic-pulse-icon"></i>
-                                    Panic Pulse - Anxiety Tracking mobile app on iOS and Android
-                                </a>
-                                <a href="core-values-quiz" class="list-group-item">Core Values Quiz</a>
-                                <a href="dbt-dime-game" class="list-group-item">DBT <i>Dime Game</i>: Determine how assertively to make or decline a request</a>
-                                <span class="list-group-item disabled">More DBT tools to come...</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    Papers / Research
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <a href="papers/A-Study-of-the-Teaching-of-Critical-Thinking.pdf" class="list-group-item">
-                                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-                                    A Study of the Teaching of Critical Thinking - Masters Thesis
-                                </a>
-                                <a href="https://www.facebook.com/notes/jordan-hitch/why-do-we-hit-more-raindrops-when-driving-fast-than-when-driving-slow/10153833981767465/" class="list-group-item">
-                                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                                    Why Do We Hit More Raindrops When Driving Fast Than When Driving Slow?
-                                </a>
-                                <span class="list-group-item disabled" style="cursor: default">More papers to come...</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="panel-title">
-                                    Miscellaneous
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <a href="https://twitch.com/dfoverdx" class="list-group-item">
-                                    <i class="fa fa-twitch" aria-hidden="true"></i>
-                                    Twitch channel
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCGV7b8dCfMwFjdLSD9JXK9w" class="list-group-item">
-                                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                                    YouTube channel
-                                </a>
-                                <a href="https://supermariomakerbookmark.nintendo.net/profile/dfoverdx?type=posted" class="list-group-item">
-                                    <i class="smm-icon"></i>
-                                    Super Mario Maker profile / levels
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                Papers / Research
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="papers/A-Study-of-the-Teaching-of-Critical-Thinking.pdf" class="list-group-item">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    A Study of the Teaching of Critical Thinking - Masters Thesis
+                </a>
+                <a href="https://www.facebook.com/notes/jordan-hitch/why-do-we-hit-more-raindrops-when-driving-fast-than-when-driving-slow/10153833981767465/" class="list-group-item">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    Why Do We Hit More Raindrops When Driving Fast Than When Driving Slow?
+                </a>
+                <span class="list-group-item disabled" style="cursor: default">More papers to come...</span>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                Miscellaneous
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="https://twitch.com/dfoverdx" class="list-group-item">
+                    <i class="fa fa-twitch" aria-hidden="true"></i>
+                    Twitch channel
+                </a>
+                <a href="https://www.youtube.com/channel/UCGV7b8dCfMwFjdLSD9JXK9w" class="list-group-item">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    YouTube channel
+                </a>
+                <a href="https://supermariomakerbookmark.nintendo.net/profile/dfoverdx?type=posted" class="list-group-item">
+                    <i class="smm-icon"></i>
+                    Super Mario Maker profile / levels
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container">
+            <div class="ml-auto navbar-text">
+                <a href='/'>Jordan Hitch</a> © 2017
+            </div>
+        </div>
+    </div>
+    <div id="cookieFooter" class="fixed-bottom collapse">
+        <div class="container d-flex justify-content-around">
+            <div id="cookieFooterAlert" class="d-none d-sm-flex alert alert-secondary justify-content-between col-10 col-md-9 col-lg-8">
+                <div>
+                    <h4 class="alert-heading">Note</h4>
+                    <p>This site uses cookies to detect whether you have read this message before.</p>
+                    <p class="small text-muted">Cookie notification messages are stupid.</p>
                 </div>
+                <button id="cookieCloseButton" type="button" class="close mb-auto" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         </div>
-        <div class="navbar navbar-fixed-bottom navbar-default">
-            <div class="container">
-                <div class="navbar-right navbar-text" style="margin-right: 0">
-                    <a href='/'>Jordan Hitch</a> © 2017
-                </div>
-            </div>
-        </div>
-        <script>
-            let h1 = $('#jumbotronTitle');
-            h1.text(window.location.host || 'dfdx.us');
-        </script>
-    </body>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha256-uEFhyfv3UgzRTnAZ+SEgvYepKKB0FW6RqZLrqfyUNug=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        let h1 = $('#jumbotronTitle');
+        h1.text(window.location.host || 'dfdx.us');
+        
+        $('#cards-container').masonry({
+            itemSelector: '.card',
+            columnWidth: '.grid-sizer',
+            percentPosition: true,
+            gutter: '.gutter-sizer',
+            transitionDuration: 0,
+        });
+        
+        let closed = $.cookie('closed');
+        if (!closed) {
+            $('#cookieFooter').collapse('show');
+            $('#cookieCloseButton').click(function () {
+                $.cookie('closed', true);
+                $('#cookieFooter').collapse('hide');
+            });
+        } else {
+            $('#cookieFooter').addClass('d-none');
+        }
+    </script>
+</body>
 </html>
