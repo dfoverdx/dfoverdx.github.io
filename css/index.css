@@ -60,11 +60,14 @@
 .fa-youtube {
     color: rgb(230, 30, 30);
 }
-.fa-facebook-official {
+.fa-facebook-square {
     color: #4267b2;
 }
 .fa-wordpress {
     color: rgb(10, 167, 217);
+}
+.fa-github-square {
+    color: #4078c0;
 }
 .psl-icon {
     min-height: 1.25em;
