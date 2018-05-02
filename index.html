@@ -2,100 +2,12 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js" integrity="sha256-YFADoQJIYFj+isdXssMGUrmsVNbVDfN5m8jPgVN+9m4=" crossorigin="anonymous"></script>
-    <style>
-        @media screen and (max-width: 767px) {
-            body {
-                overflow-x: hidden;
-            }
-
-            .grid-sizer, .card {
-                width: calc(100% - 25px);
-                margin-right: 25px;
-            }
-        }
-        
-        @media screen and (min-width: 768px) {
-            .grid-sizer, .card {
-                width: calc(50% - 25px);
-            }
-
-            #cards-container {
-                padding-right: 10px;
-            }
-        }
-        
-        @media screen and (max-height: 400px) {
-            #cookieFooterAlert {
-                display: none !important;
-            }
-        }
-
-        .gutter-sizer {
-            width: 30px;
-        }
-        
-        #cards-container {
-            margin-bottom: 64px;
-        }
-        
-        .navbar-text .list-inline {
-            display: block;
-        }
-        
-        .navbar-text .list-inline li {
-            display: inline-block;
-            padding: 0;
-        }
-        
-        .navbar-text .list-inline li:not(:last-of-type):after {
-            content: '|';
-            margin: 0 5px;
-        }
-        
-        .list-group .list-group-item.disabled {
-            cursor: default;
-        }
-        .fa-twitch {
-            color: rgb(75, 54, 124);
-        }
-        .fa-youtube-play {
-            color: rgb(230, 30, 30);
-        }
-        .fa-facebook-official {
-            color: #4267b2;
-        }
-        .fa-wordpress {
-            color: rgb(10, 167, 217);
-        }
-        .smm-icon {
-            min-height: 14px;
-            height: 14px;
-            min-width: 14px;
-            width: 14px;
-            background-image: url("https://supermariomakerbookmark.nintendo.net/assets/favicon/icon180-51497cb9fbbda59f2b0974a7954cceef.png");
-            background-size: 14px 14px;
-            display: inline-block;
-            margin-bottom: -1px;
-        }
-        .panic-pulse-icon {
-            min-height: 17px;
-            height: 17px;
-            min-width: 17px;
-            width: 17px;
-            background-image: url("./panic-pulse/img/panic-pulse-icon-small.png");
-            background-size: 17px 17px;
-            display: inline-block;
-            margin-bottom: -4px;
-            margin-left: -1.5px;
-            border-radius: 17px;
-            margin-top: 1px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css" />
     <title>dfdx.us</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -105,7 +17,7 @@
     <link rel="canonical" href="http://dfdx.us" />
 </head>
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 id="jumbotronTitle"></h1>
         </div>
@@ -119,11 +31,11 @@
             </div>
             <div class="list-group list-group-flush">
                 <a href="https://understandingdepressionandanxiety.wordpress.com/" class="list-group-item">
-                    <i class="fa fa-wordpress" aria-hidden="true"></i>
+                    <i class="fab fa-wordpress fa-fw" aria-hidden="true"></i>
                     Understanding Depression and Anxiety Blog
                 </a>
                 <a href="./panic-pulse" class="list-group-item">
-                    <i class="panic-pulse-icon"></i>
+                    <i class="panic-pulse-icon icon"></i>
                     Panic Pulse - Anxiety Tracking mobile app on iOS and Android
                 </a>
                 <a href="core-values-quiz" class="list-group-item">Core Values Quiz</a>
@@ -133,15 +45,26 @@
         </div>
         <div class="card mb-3">
             <div class="card-header bg-primary text-white">
+                Projects
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="http://pokemon-soul.link" class="list-group-item">
+                    <i class="psl-icon icon"></i>
+                    Pokémon Soul.Link
+                </a>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
                 Papers / Research
             </div>
             <div class="list-group list-group-flush">
                 <a href="papers/A-Study-of-the-Teaching-of-Critical-Thinking.pdf" class="list-group-item">
-                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    <i class="far fa-file-pdf fa-fw" aria-hidden="true"></i>
                     A Study of the Teaching of Critical Thinking - Masters Thesis
                 </a>
                 <a href="https://www.facebook.com/notes/jordan-hitch/why-do-we-hit-more-raindrops-when-driving-fast-than-when-driving-slow/10153833981967465/" class="list-group-item">
-                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i>
                     Why Do We Hit More Raindrops When Driving Fast Than When Driving Slow?
                 </a>
                 <span class="list-group-item disabled" style="cursor: default">More papers to come...</span>
@@ -152,16 +75,20 @@
                 Miscellaneous
             </div>
             <div class="list-group list-group-flush">
-                <a href="https://twitch.com/dfoverdx" class="list-group-item">
-                    <i class="fa fa-twitch" aria-hidden="true"></i>
+                <a href="https://twitch.com/dx_over_dt" class="list-group-item">
+                    <i class="fab fa-twitch fa-fw" aria-hidden="true"></i>
+                    Twitch channel
+                </a>
+                <a href="https://twitch.com/dx_over_dt" class="list-group-item">
+                    <i class="fab fa-twitch fa-fw" aria-hidden="true"></i>
                     Twitch channel
                 </a>
                 <a href="https://www.youtube.com/channel/UCGV7b8dCfMwFjdLSD9JXK9w" class="list-group-item">
-                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    <i class="fab fa-youtube fa-fw" aria-hidden="true"></i>
                     YouTube channel
                 </a>
                 <a href="https://supermariomakerbookmark.nintendo.net/profile/dfoverdx?type=posted" class="list-group-item">
-                    <i class="smm-icon"></i>
+                    <i class="smm-icon icon"></i>
                     Super Mario Maker profile / levels
                 </a>
             </div>
@@ -192,7 +119,7 @@
     <script type="text/javascript">
         let h1 = $('#jumbotronTitle');
         h1.text(window.location.host || 'dfdx.us');
-        
+
         $('#cards-container').masonry({
             itemSelector: '.card',
             columnWidth: '.grid-sizer',
@@ -200,7 +127,7 @@
             gutter: '.gutter-sizer',
             transitionDuration: 0,
         });
-        
+
         let closed = $.cookie('closed');
         if (!closed) {
             $('#cookieFooter').collapse('show');

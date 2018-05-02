@@ -1,0 +1,102 @@
+@media screen and (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .grid-sizer, .card {
+        width: calc(100% - 25px);
+        margin-right: 25px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .grid-sizer, .card {
+        width: calc(50% - 25px);
+    }
+
+    #cards-container {
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    #cookieFooterAlert {
+        display: none !important;
+    }
+}
+
+#cookieCloseButton {
+    cursor: pointer;
+}
+
+.gutter-sizer {
+    width: 30px;
+}
+
+#cards-container {
+    margin-bottom: 64px;
+}
+
+.navbar-text .list-inline {
+    display: block;
+}
+
+.navbar-text .list-inline li {
+    display: inline-block;
+    padding: 0;
+}
+
+.navbar-text .list-inline li:not(:last-of-type):after {
+    content: '|';
+    margin: 0 5px;
+}
+
+.list-group .list-group-item.disabled {
+    cursor: default;
+}
+.fa-twitch {
+    color: rgb(75, 54, 124);
+}
+.fa-youtube {
+    color: rgb(230, 30, 30);
+}
+.fa-facebook-official {
+    color: #4267b2;
+}
+.fa-wordpress {
+    color: rgb(10, 167, 217);
+}
+.psl-icon {
+    min-height: 1.25em;
+    height: 1.25em;
+    background-image: url("/img/farfetchd.png");
+    background-size: 1.25em 0.9375em;
+    display: inline-block;
+    margin-bottom: -3px;
+    border-radius: 1.25em;
+    margin-top: 1px;
+}
+.smm-icon {
+    min-height: 16px;
+    height: 16px;
+    background-image: url("https://supermariomakerbookmark.nintendo.net/assets/favicon/icon180-51497cb9fbbda59f2b0974a7954cceef.png");
+    background-size: 16px 16px;
+    display: inline-block;
+    margin-bottom: -1px;
+}
+.panic-pulse-icon {
+    min-height: 1.25em;
+    height: 1.25em;
+    background-image: url("/panic-pulse/img/panic-pulse-icon-small.png");
+    background-size: 1.25em 1.25em;
+    display: inline-block;
+    margin-bottom: -4px;
+    border-radius: 1.25em;
+    margin-top: 1px;
+}
+.icon {
+    min-width: 1.25em;
+    width: 1.25em;
+    background-repeat: no-repeat;
+    background-position: center;
+}
