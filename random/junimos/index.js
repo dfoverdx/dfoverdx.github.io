@@ -143,7 +143,7 @@
             var i, particle;
             for (i = 0; i < count; i++) {
                 if (particlesArray === followingParticles) {
-                    particle = new Particle(x, y(), 50 / 1080 * height, colors[i % colors.length]);
+                    particle = new Particle(x, y(), 50, colors[i % colors.length]);
                     particle.target = layer2Particles[i];
                 }
                 else {
