@@ -92,14 +92,6 @@
         #5BCEFA 80%, #5BCEFA 100%
     );
 }
-.fa-transgender-alt:before:after {
-    content: "\f225";
-    background: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
 .psl-icon {
     min-height: 1.25em;
     height: 1.25em;
