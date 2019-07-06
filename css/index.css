@@ -72,6 +72,34 @@
 .fa-google-drive {
     color: #666666;
 }
+.fa-transgender-alt {
+    background: #424A60;
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.fa-transgender-alt:before {
+    margin: -2px;
+    color: transparent;
+    position: relative;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(
+        #5BCEFA, #5BCEFA 20%, 
+        #F5A9B8 20%, #F5A9B8 40%, 
+        white 40%, white 60%,
+        #F5A9B8 60%, #F5A9B8 80%,
+        #5BCEFA 80%, #5BCEFA 100%
+    );
+}
+.fa-transgender-alt:before:after {
+    content: "\f225";
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .psl-icon {
     min-height: 1.25em;
     height: 1.25em;
