@@ -1,3 +1,32 @@
+#dxdt-website:hover {
+    text-decoration: none;
+}
+
+#dxdt-website .card-header {
+    background-color: #e6e6fa;
+}
+
+#dxdt-website .card-header span {
+    font-size: larger;
+}
+
+#dxdt-website svg {
+    width: 60px;
+}
+
+#dxdt-website .dxdt-text p {
+    color: #343a40;
+}
+
+#dxdt-website .dxdt-text p span {
+    color: #007bff;
+}
+
+#dxdt-website:hover .dxdt-text p span {
+    text-decoration: underline;
+    color: #0056b3
+}
+
 @media screen and (max-width: 767px) {
     body {
         overflow-x: hidden;
@@ -72,26 +101,26 @@
 .fa-google-drive {
     color: #666666;
 }
-.fa-transgender-alt {
-    background: #424A60;
+/* .fa-transgender-alt {
+    background: transparent;
     border-radius: 2px;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-.fa-transgender-alt:before {
+} */
+/* .fa-transgender-alt:before {
     margin: -2px;
     color: transparent;
     position: relative;
     background-clip: text;
     -webkit-background-clip: text;
     background-image: linear-gradient(
-        #5BCEFA, #5BCEFA 20%, 
-        #F5A9B8 20%, #F5A9B8 40%, 
+        #5BCEFA, #5BCEFA 20%,
+        #F5A9B8 20%, #F5A9B8 40%,
         white 40%, white 60%,
         #F5A9B8 60%, #F5A9B8 80%,
         #5BCEFA 80%, #5BCEFA 100%
     );
-}
+} */
 .psl-icon {
     min-height: 1.25em;
     height: 1.25em;
